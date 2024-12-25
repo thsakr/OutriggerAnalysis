@@ -1,0 +1,128 @@
+h1 {
+   color: red ;
+   margin: 1px;
+   padding: 2px;
+}
+
+h3 {
+   color: rgb(10, 10, 204) ;
+   margin: 5px;
+   padding: 10px;
+}
+
+#results {
+   margin-top: 20px;
+   height: 500;
+   padding: 10px;
+   border: 1px solid #ddd;
+   background-color: #7e6161;
+}
+
+h4 {
+   color: rgb(10, 10, 171);   
+   margin-block-start: 1  px;
+   margin-block-end:  1px;
+   padding: 2px;
+   
+}
+
+.container {
+   background-color: rgb(224, 224, 209);
+   display: grid;
+   align-self: center;
+   grid-template-columns: auto; /* Image on the left, form on the right */
+   gap: 1%; /* Space between the columns */
+   align-items: center; /* Align items vertically */
+   display: flex; 
+}
+
+.container1 {
+   background-color: rgb(224, 224, 209);
+   display: grid;
+   grid-template-columns: auto; /* Image on the left, form on the right */
+   gap: 1%; /* Space between the columns */
+   align-items: center; /* Align items vertically */
+   padding: 1%;
+   display: flex; 
+}
+.column {
+   flex: 1; /* Equal width for each column */
+   padding: 2px; /* Adds spacing inside columns */
+   border: 1px solid #ccc; /* Visual border for the columns */
+}
+img{
+   width: 15%; /* Adjust image size */
+   height: auto ; /* Maintain aspect ratio */
+}
+
+form{
+   display: block; /* Ensure the form is properly displayed */
+   width : 95%;
+   height: 700;
+   border-radius: 1%;
+   border-width: 3px;
+   align-self: center;
+   margin: 1%;
+   margin-top: 1%;
+   padding: 1%;
+   border-color: rgb(15, 2, 71);
+   border-style:inset;
+   background-color :rgb(110, 118, 118);
+ }
+
+
+ input{
+
+    width: 25%;
+    background-color: rgb(203, 203, 219);
+    padding: 3px;
+    margin: 3px;
+    font-size: small;
+    height: 10px;
+
+ }
+
+ label{
+    color: rgb(57, 78, 152);
+    background-color :transparent ;
+    font-size: small;
+ }
+
+div{
+   min-height: 40px;
+ }
+   .fname{
+      float: left;
+      width: 40%;
+      padding: 1px;
+      margin: 1px;
+   }
+ 
+   .fname1{
+      float: left;
+      width: 22%;
+      padding: 1px;
+      margin: 1px;
+   }  
+   table tbody tr:last-child {
+      background-color: #f2f2f2;
+      font-style: italic;
+    }
+
+    table tbody tr:first-child {
+      background-color: #f2f2f2;
+      font-style:italic        ;
+      font-weight: bold;
+      background-color: rgb(34, 11, 150);
+      color: white;
+      text-align: center;
+    }
+    table tbody tr:last-child {
+      background-color: #f2f2f2;
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+    }
+   
+ 
+

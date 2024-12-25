@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outrigger Analysis - by Tharwat Sakr</title>
+</head>
+
+<link href="{{ url_for('static', filename='stylesTHS.css') }}" type="text/css" rel="stylesheet" />
+
+<body>
+    <h3>Outrigger System Analysis</h3>
+
+    <form id="analysisForm" action="/analyze" , method="post">
+        <div class="container">
+
+        <div class="dim">  
+            <h4>Wall Dimensions</h4>         
+            <label for="Hstory"  class ="fname" >Story Height (h) :</label>
+            <input type="number" id="Hstory" name="Hstory" value="8" required><br>
+            <label for="Htot" class ="fname" > Total Height (H) :</label>
+            <input type="number" id="Htot" name="Htot" value="160" required><br>
+            <label for="D"  class ="fname" >Total depth (D):</label>
+            <input type="number" id="D" name="D" value="28"required><br>
+            <label  for="B"  class ="fname" >   Outrigger Span (B):</label>
+            <input  type="number" id="B" name="B" value="9" required>     
+    </div>
+    <div class="Stif">           
+        <h4>Element Stiffness</h4>                 
+        <label for="ECore"  class ="fname1" >Core E & I :</label>        
+        <input type="number" id="ECore" name="ECore" value="27800000" required>
+        <!-- <label for="ICore"  class ="fname" >and Inertia:</label> -->
+        <input type="number" id="ICorec" name="ICore" value="41.667" required><br>        
+        <label for="Ecol"  class ="fname1" >Column E & I   :</label>
+        <input type="number" id="Ecol" name="Ecol" value="199948000" required>                      
+        <!-- <label for="ACol"  class ="fname" >Column Area:</label> -->
+        <input type="number" id="ACol" name="ACol" value="0.03458" required><br>
+    
+        <label for="EGirder" class ="fname1" >Girder E  & I  :</label>
+        <input type="number" id="EGirder" name="EGirder" value="27800000" required>
+        <!-- <label for="IGirder"  class ="fname" >Girder Inertia:</label> -->
+        <input type="number" id="IGirder" name="IGirder" value="2.6667" required>
+        
+
+    </div>
+    <div class="Lout"  >           
+        <h4>Load & Outrigger</h4>         
+        <label for="Load"  class ="fname" >Load       :</label>
+        <input type="number" id="Load" name="Load" value="5.0" required><br>
+        <label for="Nout"  class ="fname" >No.of Outriggers:</label>
+        <input type="number" id="Nout" name="Nout" value="3" required><br>
+        <label for="x" class ="fname" >Location (from top):</label>
+        <input  id="x" name="x" value="42 ,  78,  118" required><br>
+    </div>    
+        <img src="{{ url_for('static', filename='Notation.jpg') }}" >    
+    </div >
+        <button type="submit"  name="action" value="ShowGeo">Solve </button>
+    </form>
+
+    <div class="container1">
+
+    <!-- <img src="{{ url_for('static', filename='Notation.jpg') }}" >     -->
+    <img src="data:image/png;base64, {{ plot1 }}" alt="" aria-required="false" >
+    <img src="data:image/png;base64, {{ plot2 }}" alt="" aria-required="false" >
+    <img src="data:image/png;base64, {{ plot3 }}" alt="" aria-required="false" >
+    <img src="data:image/png;base64, {{ plot4 }}" alt="" aria-required="false" >
+
+    <table border="1">
+        <thead>
+            <!-- <tr>
+                <th>Height</th>
+                <th>Wall Axial Force</th>
+                <th>Wall Moment</th>
+                <th>Deflection</th>
+            </tr> -->
+            
+        </thead>
+        <tbody>
+            {% for row in Data %}
+            <tr height="12px">
+                <td>{{ row.hei }}</td>
+                <td>{{ row.axial }}</td>
+                <td>{{ row.mom }}</td>
+                <td>{{ row.defl }}</td>
+            </tr>
+
+            {% endfor %}
+    
+
+   </div>
+
+
+</body>
+</html>

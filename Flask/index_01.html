@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outrigger Analysis</title>
+</head>
+
+<link href="stylesTHS.css" type="text/css"
+rel="stylesheet" />
+
+<body>
+    <h1>Outrigger System Analysis</h1>
+
+    <form id="analysisForm">
+        <!-- Input fields for analysis parameters -->
+        
+        <div id="fl01">
+            <label for="sc">Scale:</label>
+            <input type="number" id="sc" name="sc" value="3" required>
+        </div>
+    
+        <div>
+            <label for="Htot">Total Height:</label>
+            <input type="number" id="Htot" name="Htot" value="160" required>
+        </div>
+    
+        <div>
+            <label for="D">Total Depth:</label>
+            <input type="number" id="D" name="D" value="29" required>
+        </div>
+    
+        <div>
+            <label for="B">Outrigger Span:</label>
+            <input type="number" id="B" name="B" value="12" required>
+        </div>
+    
+        <div>
+            <label for="Hstory">Story Height:</label>
+            <input type="number" id="Hstory" name="Hstory" value="4" required>
+        </div>
+    
+        <div>
+            <label for="Load">Load:</label>
+            <input type="number" id="Load" name="Load" value="5.0" required>
+        </div>
+    
+        <div>
+            <label for="EGirder">Girder E:</label>
+            <input type="number" id="EGirder" name="EGirder" value="21000000" required>
+        </div>
+    
+        <div>
+            <label for="ECore">Core E:</label>
+            <input type="number" id="ECore" name="ECore" value="2100000" required>
+        </div>
+    
+        <div>
+            <label for="Ecol">Column E:</label>
+            <input type="number" id="Ecol" name="Ecol" value="2100000" required>
+        </div>
+    
+        <div>
+            <label for="IGirder">Girder Inertia:</label>
+            <input type="number" id="IGirder" name="IGirder" value="3" required>
+        </div>
+    
+        <div>
+            <label for="ICore">Core Inertia:</label>
+            <input type="number" id="ICore" name="ICore" value="3" required>
+        </div>
+    
+        <div>
+            <label for="Acol">Column Area:</label>
+            <input type="number" id="Acol" name="Acol" value="3" required>
+        </div>
+    
+        <div>
+            <label for="Nout">Number of Outriggers:</label>
+            <input type="number" id="Nout" name="Nout" value="3" required>
+        </div>
+    
+        <div>
+            <label for="x">Location:</label>
+            <input type="text" id="x" name="x" placeholder="e.g., 60, 120" required>
+        </div>
+    
+        <!-- Submit Button -->
+        <button type="submit">Analyze</button>
+    </form>
+    
+
+
+    <div id="results"></div>
